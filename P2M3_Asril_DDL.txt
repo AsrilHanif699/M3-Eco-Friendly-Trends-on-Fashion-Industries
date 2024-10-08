@@ -1,0 +1,35 @@
+'''
+-----------------------------------------------------------
+INTRODUCTION
+-----------------------------------------------------------
+Nama    : Muhammad Asril Hanif
+Batch   : RMT-034
+
+Query dibawah untuk membuat tabel dan copy data dari CSV kedalam tabel yang telah dibuat
+-----------------------------------------------------------
+'''
+
+
+CREATE TABLE table_m3 (
+    "Brand_ID" VARCHAR(15),
+    "Brand_Name" VARCHAR(20),
+    "Country" VARCHAR(20),
+    "Year" INTEGER,
+    "Sustainability_Rating" VARCHAR(5),
+    "Material_Type" VARCHAR (20),
+    "Eco_Friendly_Manufacturing" VARCHAR(5),
+    "Carbon_Footprint_MT" FLOAT,
+    "Water_Usage_Liters" FLOAT,
+    "Waste_Production_KG" FLOAT,
+    "Recycling_Programs" VARCHAR(5),
+    "Product_Lines" INTEGER,
+    "Average_Price_USD" FLOAT,
+    "Market_Trend" VARCHAR(25),
+    "Certifications" VARCHAR(50),
+    PRIMARY KEY("Brand_ID")
+);
+
+COPY table_m3("Brand_ID","Brand_Name","Country","Year","Sustainability_Rating","Material_Type","Eco_Friendly_Manufacturing","Carbon_Footprint_MT","Water_Usage_Liters","Waste_Production_KG","Recycling_Programs","Product_Lines","Average_Price_USD","Market_Trend","Certifications")
+FROM 'E:\P2M3_asril_data_raw.csv'
+DELIMITER ','
+CSV HEADER;
